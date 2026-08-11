@@ -1,0 +1,67 @@
+AI USE LOG - COSC2816 Individual Task 1
+Student: s4239310
+Condition 3: Bounded Process AI
+
+Purpose: running record of generative AI use, kept as the work happens.
+This feeds the Condition 3 Bounded Process AI Declaration submitted to Canvas.
+
+For each entry record:
+  DATE
+  TOOL          which AI tool
+  PURPOSE       which approved purpose it falls under (see below)
+  ASKED         what I asked
+  OUTPUT        what the tool returned, in summary
+  MY DECISION   what I accepted, rejected or revised, and why
+
+Approved purposes under Condition 3 for this assessment:
+  (a) Code assistance to conduct machine learning experiments
+  (b) Consultation of concepts related to ML, data science, and domain application
+  (c) Brainstorming of domain-specific application of data science concepts
+  (d) Surface-level polishing
+
+------------------------------------------------------------------------
+2026-08-11
+TOOL:        Claude (Anthropic)
+PURPOSE:     (c) brainstorming domain application
+ASKED:       Help shortlisting a data science job advertisement and two
+             publicly available datasets relevant to it.
+OUTPUT:      Suggested several roles across quantitative investment risk,
+             credit risk and people analytics, with candidate dataset pairings
+             for each. Recommended CBA Senior Data Scientist (People Analytics)
+             with IBM HR Attrition + UCI Adult.
+MY DECISION: TODO - record which role and datasets I chose and why I rejected
+             the alternatives. This decision is mine to state.
+
+------------------------------------------------------------------------
+2026-08-11
+TOOL:        Claude (Anthropic)
+PURPOSE:     (b) consultation of concepts
+ASKED:       What "are the insights complementary or contradicting" means in
+             Part 1.3, and whether feature importance can be obtained from a
+             neural network.
+OUTPUT:      Explained complementary vs contradicting vs uninformative with
+             worked illustrative examples. Clarified that MLP has no built-in
+             feature importance but permutation importance can be applied
+             post-hoc, and that this is an intrinsic vs post-hoc
+             interpretability distinction.
+MY DECISION: TODO - record what I understood and how it shaped my analysis.
+
+------------------------------------------------------------------------
+2026-08-11
+TOOL:        Claude (Anthropic)
+PURPOSE:     (a) code assistance
+ASKED:       Set up the repository scaffold (.gitignore, requirements.txt,
+             README stub, notebook structure).
+OUTPUT:      Created the scaffold files listed above.
+MY DECISION: TODO - note what I kept or changed.
+
+------------------------------------------------------------------------
+TEMPLATE - copy for each new entry
+------------------------------------------------------------------------
+DATE:
+TOOL:
+PURPOSE:
+ASKED:
+OUTPUT:
+MY DECISION:
+
