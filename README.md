@@ -54,7 +54,6 @@ data/                         raw data files and their documentation
 figures/                      exported charts used in the report appendix
 ai-log.txt                    record of generative AI use (Condition 3)
 requirements.txt              dependencies
-task1_writing_reference.html  collected evidence, sequenced to the assignment brief
 ```
 
 ## How to run
