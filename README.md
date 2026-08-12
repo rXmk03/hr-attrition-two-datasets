@@ -7,17 +7,16 @@ Student: s4239310
 
 Analysis supporting Individual Task 1, Part 1. The chosen data science role is
 Senior Data Scientist, People Analytics (Commonwealth Bank of Australia, REQ259561).
-Two publicly available workforce datasets are analysed with two machine learning
+Publicly available workforce datasets are analysed with two machine learning
 algorithms to generate insights relevant to that role.
 
 ## Datasets
 
 | Dataset | Source | Rows | Target |
 | --- | --- | --- | --- |
-| IBM HR Analytics Employee Attrition & Performance | Kaggle | 1,470 | `Attrition` (binary) |
-| Adult / Census Income | UCI ML Repository | 48,842 | income >$50K (binary) |
+| IBM HR Analytics Employee Attrition | Kaggle | 1,470 | `Attrition` (binary) |
 
-TODO: confirm row counts and class balance after loading.
+Second dataset to be added.
 
 ## Models
 
