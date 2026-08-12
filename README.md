@@ -52,9 +52,12 @@ The same protocol is applied to both datasets so results are comparable:
 notebooks/01_analysis.ipynb   full analysis, both datasets
 data/                         raw data files and their documentation
 figures/                      exported charts used in the report appendix
-ai-log.txt                    record of generative AI use (Condition 3)
 requirements.txt              dependencies
 ```
+
+Submission artefacts — the report appendix, the job advertisement, the exported
+notebook, and the record of generative AI use — are kept outside this repository and
+submitted through Canvas.
 
 ## How to run
 

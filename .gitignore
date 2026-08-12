@@ -19,9 +19,11 @@ desktop.ini
 .vscode/
 .idea/
 
-# Keep data/ and figures/ tracked - they are evidence for the appendix.
-# Add specific large files here if any exceed 50MB.
-
-# Working notes - not part of the submission
+# Working and submission files - kept outside the repository
 notes.md
 task1_writing_reference.html
+appendix_draft.tex
+ai-log.txt
+*.pdf
+
+# Keep data/ and figures/ tracked - they are evidence for the appendix.
