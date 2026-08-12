@@ -21,3 +21,6 @@ desktop.ini
 
 # Keep data/ and figures/ tracked - they are evidence for the appendix.
 # Add specific large files here if any exceed 50MB.
+
+# Working notes - not part of the submission
+notes.md

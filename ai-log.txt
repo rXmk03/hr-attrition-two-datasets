@@ -1,67 +1,163 @@
 AI USE LOG - COSC2816 Individual Task 1
 Student: s4239310
 Condition 3: Bounded Process AI
+Tool: Claude (Anthropic)
 
-Purpose: running record of generative AI use, kept as the work happens.
-This feeds the Condition 3 Bounded Process AI Declaration submitted to Canvas.
+Approved purposes:
+(a) Code assistance for machine learning experiments
+(b) Consultation of concepts
+(c) Brainstorming domain application
+(d) Surface-level polishing
 
-For each entry record:
-  DATE
-  TOOL          which AI tool
-  PURPOSE       which approved purpose it falls under (see below)
-  ASKED         what I asked
-  OUTPUT        what the tool returned, in summary
-  MY DECISION   what I accepted, rejected or revised, and why
 
-Approved purposes under Condition 3 for this assessment:
-  (a) Code assistance to conduct machine learning experiments
-  (b) Consultation of concepts related to ML, data science, and domain application
-  (c) Brainstorming of domain-specific application of data science concepts
-  (d) Surface-level polishing
+1. Choosing a job advertisement and datasets  [c]
 
-------------------------------------------------------------------------
-2026-08-11
-TOOL:        Claude (Anthropic)
-PURPOSE:     (c) brainstorming domain application
-ASKED:       Help shortlisting a data science job advertisement and two
-             publicly available datasets relevant to it.
-OUTPUT:      Suggested several roles across quantitative investment risk,
-             credit risk and people analytics, with candidate dataset pairings
-             for each. Recommended CBA Senior Data Scientist (People Analytics)
-             with IBM HR Attrition + UCI Adult.
-MY DECISION: TODO - record which role and datasets I chose and why I rejected
-             the alternatives. This decision is mine to state.
+Asked: help shortlisting a data science job ad and relevant public datasets.
+Output: several candidate roles with dataset suggestions for each.
+My decision: reviewed seven advertisements before choosing. Rejected a
+quantitative investment risk role, two credit risk roles, a client-facing
+portfolio role, a consulting role and a reporting role. Chose the CBA People
+Analytics role because it is titled data scientist, has strong material for the
+diversity question, and its advertising period covered the submission date.
 
-------------------------------------------------------------------------
-2026-08-11
-TOOL:        Claude (Anthropic)
-PURPOSE:     (b) consultation of concepts
-ASKED:       What "are the insights complementary or contradicting" means in
-             Part 1.3, and whether feature importance can be obtained from a
-             neural network.
-OUTPUT:      Explained complementary vs contradicting vs uninformative with
-             worked illustrative examples. Clarified that MLP has no built-in
-             feature importance but permutation importance can be applied
-             post-hoc, and that this is an intrinsic vs post-hoc
-             interpretability distinction.
-MY DECISION: TODO - record what I understood and how it shaped my analysis.
 
-------------------------------------------------------------------------
-2026-08-11
-TOOL:        Claude (Anthropic)
-PURPOSE:     (a) code assistance
-ASKED:       Set up the repository scaffold (.gitignore, requirements.txt,
-             README stub, notebook structure).
-OUTPUT:      Created the scaffold files listed above.
-MY DECISION: TODO - note what I kept or changed.
+2. What "complementary or contradicting" means  [b]
 
-------------------------------------------------------------------------
-TEMPLATE - copy for each new entry
-------------------------------------------------------------------------
-DATE:
-TOOL:
-PURPOSE:
-ASKED:
-OUTPUT:
-MY DECISION:
+Asked: what the Part 1.3 phrase means.
+Output: explanation of complementary vs contradicting vs uninformative, with
+examples from unrelated domains.
+My decision: accepted the concept. Later rejected the suggested framing that the
+two datasets could be compared substantively, and rejected the original dataset
+pairing entirely because I could not answer the question with confidence. Chose a
+second attrition dataset so the comparison would be direct.
 
+
+3. Feature importance from a neural network  [b]
+
+Asked: whether a neural network gives feature importance.
+Output: MLP has none built in; permutation importance works post-hoc and is
+model-agnostic.
+My decision: accepted. Applied permutation importance to both models so the
+rankings were measured the same way.
+
+
+4. Stratified sampling  [b]
+
+Asked: what stratification is and why it matters.
+Output: explanation with a demonstration of test-set composition varying from 41
+to 58 leavers without it, versus 47 every time with it.
+My decision: accepted. Used stratify=y on both datasets.
+
+
+5. Precision, recall, and justifying metrics  [b]
+
+Asked: the difference between precision and recall, and what "justify your
+evaluation metrics" requires.
+Output: definitions, and the structure of a justification. Worked examples in
+spam filtering and fraud detection, not in my domain.
+My decision: accepted the definitions and the structure. Wrote my own
+justification using my own results.
+
+
+6. Why class weighting did not help  [b]
+
+Asked: why class_weight='balanced' barely changed recall.
+Output: it alters tree construction but not the 0.5 voting threshold.
+My decision: accepted. Moved to threshold adjustment, which produced the real
+improvement on Dataset A.
+
+
+7. Validation strategy  [b]
+
+Asked: whether to use a three-way train/validation/test split.
+Output: with 237 positive cases a separate validation set would be too small;
+cross-validation on the training portion suggested as the alternative.
+My decision: accepted the reasoning. Used an 80/20 train/test split and recorded
+why a three-way split was not appropriate here.
+
+
+8. Analysis code  [a]
+
+Asked: code for loading, cleaning, encoding, splitting, fitting both models,
+permutation importance, threshold sweeps and effect-size checks.
+Output: scikit-learn and pandas code for each step.
+My decision: used the code. Rejected a suggested relative-path fallback which
+silently loaded from the wrong folder, and replaced it with an absolute path
+constant plus an assertion.
+
+
+9. Feedback on my interpretation of feature importance  [d]
+
+Asked: feedback on my draft.
+Output: flagged that "causes" overstated an associational finding, that the gap
+between the second and third features was larger than my draft implied, and
+corrected typos.
+My decision: accepted all three. Rewrote using "strongest predictor" instead of
+"causes" and acknowledged the gap.
+
+
+10. Repository scaffold  [a]
+
+Asked: set up the repository and notebook structure.
+Output: .gitignore, requirements.txt, README, data documentation, section
+headings.
+My decision: accepted the structure. Later removed sections and charts that were
+not required by the brief.
+
+
+11. Applying the same protocol to the second dataset  [a]
+
+Asked: code to run the same analysis on a second dataset.
+Output: notebook cells mirroring the first dataset.
+My decision: accepted. I also identified that the duplicate check had only been
+applied to one dataset and required it be added to the other so both had
+identical treatment.
+
+
+12. Why removing duplicates changed the class balance  [b]
+
+Asked: why the balance shifted from 23.8% to 16.6%, and whether the high accuracy
+was caused by duplication.
+Output: an even distribution would leave the balance unchanged, so the shift
+showed the duplicates were leaver-heavy; performance held after removal.
+My decision: accepted. Recorded that the result was not an artefact of memorised
+rows.
+
+
+13. Which threshold feature importance was measured at  [b]
+
+Asked: I noticed the importance had been computed without specifying a threshold
+and asked which one it used.
+Output: confirmed permutation_importance calls predict(), which uses 0.5, so the
+ranking came from a configuration I had already rejected. A custom scorer was
+supplied to repeat it at the chosen threshold.
+My decision: accepted. Report the 0.25 ranking as the result and keep the 0.50
+ranking for comparison only.
+
+
+14. Feedback on my chart observation  [d]
+
+Asked: feedback on what I wrote about the Dataset A charts.
+Output: flagged that I had described TotalWorkingYears as tenure at the company
+when it measures total career experience, that the claims lacked figures, and
+that I had not referenced the base rate. Corrected typos.
+My decision: accepted the correction on career experience versus tenure. Also
+rejected a comparison chart that used TotalWorkingYears against the second
+dataset's company tenure, since they measure different things.
+
+
+15. Feedback on my threshold observation  [d]
+
+Asked: feedback on what I wrote about the threshold sweep.
+Output: flagged that I had stated increasing the threshold caused false alarms
+when the output shows lowering it does.
+My decision: accepted and corrected the direction.
+
+
+16. Comparing workload across the two datasets  [b]
+
+Asked: whether overtime and average monthly hours could be compared.
+Output: one is a binary flag and the other a continuous count; direction is
+comparable but shape is not.
+My decision: accepted. Removed workload from the cross-dataset comparison and
+stated the measurement difference as a limitation.
