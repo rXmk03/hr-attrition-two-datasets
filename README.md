@@ -1,7 +1,6 @@
-# COSC2816 – Individual Task 1
+# HR attrition 
 
-Case Studies in Data Science, RMIT, Semester 2 2026.
-Student: s4239310
+
 
 ## Project
 
